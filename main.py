@@ -225,6 +225,7 @@ def main():
 		'24.media.tumblr.com'
 	}
 	STEP = MONTH
+	PAUSE_AFTER_SUBMISSION = HOUR * 2
 
 
 	while True:
@@ -276,6 +277,8 @@ def main():
 				fullname=submitted['json']['data']['name'],
 				headers=headers
 			)
+			
+			time.sleep(PAUSE_AFTER_SUBMISSION)
 
 		pv.after += STEP
 
